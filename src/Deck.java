@@ -20,6 +20,7 @@ public class Deck {
 	 */
 	private int size;
 
+	private int cardCount = 0;
 
 	/**
 	 * Creates a new <code>Deck</code> instance.<BR>
@@ -31,6 +32,18 @@ public class Deck {
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		cards = new ArrayList();
+		for (int i = 0; i < suits.length; i++) {
+			for (int j = 0; j < ranks.length; j++) {
+				// ranks and values are equal in length
+				Card newCard = new Card(ranks[j], suits[i], values[j]);
+				cards.add(newCard);
+			}		
+		}
+		// .size() gives the length of an ArrayList
+		size = cards.size();
+		//shuffle();
+
 	}
 
 
@@ -40,6 +53,7 @@ public class Deck {
 	 */
 	public boolean isEmpty() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		return (size == 0);
 	}
 
 	/**
@@ -48,6 +62,7 @@ public class Deck {
 	 */
 	public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		return size;
 	}
 
 	/**
@@ -65,6 +80,13 @@ public class Deck {
 	 */
 	public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+
+		if (isEmpty()) {  
+			return null;
+		} else {
+			size--;
+			return cards.get(size);
+		}
 	}
 
 	/**
