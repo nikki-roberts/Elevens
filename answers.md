@@ -1,0 +1,3 @@
+1) Elevens, thirteens and tens are all similar in that they have a board with a deck of cards, cards on the board and cards that have been discarded. They're different in what cards carry what point values and what cards are required to make a match and be discarded.
+2) The values in the ElevensBoard class are passed into the constructor in the Board superclass and they get initialized there.
+3) The abstract methods in Board are isLegal, anotherPlayIsPossible(). These methods are overridden in the ElevensBoard file and they call methods specific to this class, containsJQK and containsPairSum11. Yes, because all the other methods are game specific or are not abstract because they are the same across all the games.
