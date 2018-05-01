@@ -209,6 +209,13 @@ public class ElevensBoard {
 		}
 	}
 
+	public static printCards(ElevensBoard board) {
+		List<Integer> cIndexes = board.cardIndexes();
+		for (int i = 0; i < cIndexes.length; i++) {
+ +			System.out.println(cards[cIndexes[i]]);
+ +		}
+	}
+
 	/**
 	 * Check for an 11-pair in the selected cards.
 	 * @param selectedCards selects a subset of this board.  It is list
